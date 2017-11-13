@@ -30,7 +30,7 @@ sub authenticate {
     my $user = $self->do_authenticate();
     unless (defined $user) {
         my $realm = $self->authen_realm();
-        print "HTTP/1.0 401\r\n";
+        print "HTTP/1.0 401 \r\n";
         print qq(WWW-Authenticate: Basic realm="$realm"\r\n\r\n);
         print "Authentication required.";
         return;
